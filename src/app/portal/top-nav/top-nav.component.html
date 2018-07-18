@@ -1,0 +1,98 @@
+<header class="header-portal rgba-grey-light">         
+    <mdb-navbar SideClass="navbar navbar-expand-lg bg-white text-secondary scrolling-navbar" [containerInside]="false">
+        <logo>
+            <a class="logo navbar-brand pl-3 text-primary" style="font-family:'Segoe UI', Roboto, sans-serif; font-weight:400;" href="#"><span><strong><em>i</em></strong></span>Banking</a>
+        </logo>
+        <links>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active waves-light" mdbRippleRadius>
+                    <a class="nav-link mr-5"><i class="fa fa-phone mr-2" aria-hidden="true"></i>Help Center: 07073700000 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item waves-light mx-5" mdbRippleRadius>
+                    <a class="nav-link"><i class="fas fa-bell" aria-hidden="true"></i> Notifications</a>
+                </li>
+                <li class="nav-item waves-light" mdbRippleRadius>
+                    <a class="nav-link"><i class="fas fa-cog" aria-hidden="true"></i> Settings</a>
+                </li>
+                <li class="nav-item waves-light" mdbRippleRadius>
+                    
+                    <a class="nav-link"><i class="fas fa-sign-out-alt mr-2" aria-hidden="true"></i>Logout</a>
+                </li>
+            </ul>
+        </links>
+    </mdb-navbar>
+    <!-- pageHeader. Content dynamically changes based on page url -->
+    <div class="view view-portal intro hm-black-light">
+        <div class="mask flex-center full-bg-img">
+            
+            <div class="container-fluid text-center wow fadeInUp mt-3 white-text">
+                <ngx-carousel
+                    [inputs]="pageHeaderCarousel"
+                    [moveToSlide]="1"
+                    (onMove)="onmoveFn($event)">
+                    <ngx-item NgxCarouselItem>
+                        <div class="card rgba-grey-slight mx-3 z-depth-0">
+                            <div class="card-body">
+                                <p class="small">SKS: Modupe Abdulsalam (0001110001)</p>
+                                <h1><span class="green-text">N </span>703,510.<small>87</small></h1>
+                                <p class="small text-secondary">Last Updated: 8, March 2018</p>
+                            </div>
+                        </div>
+                    </ngx-item>
+                    <ngx-item NgxCarouselItem>
+                        <div class="card rgba-grey-slight mx-3 z-depth-0">
+                            <div class="card-body">
+                                <p class="small">SAVINGS: Abdulsalam Ebere. (9999999032)</p>
+                                <h1><span class="green-text">N </span>3,510.<small>90</small></h1>
+                                <p class="small text-secondary">Last Updated: 8, March 2018</p>
+                            </div>
+                        </div>
+                    </ngx-item>
+                    <ngx-item NgxCarouselItem>
+                        <div class="card rgba-grey-slight mx-3 z-depth-0">
+                            <div class="card-body">
+                                <p class="small">CURRENT: PriceHouse Coorp. (2667778887)</p>
+                                <h1><span class="green-text">N </span>193,000.<small>12</small></h1>
+                                <p class="small text-secondary">Last Updated: 8, March 2018</p>
+                            </div>
+                        </div>
+                    </ngx-item>
+                    <ngx-item NgxCarouselItem>
+                        <div class="card rgba-green-slight mx-3 z-depth-0">
+                            <div class="card-body">
+                                <p class="small">PriceHouse Coorp. (8786785643)</p>
+                                <h1><span class="green-text">$ </span>2,403,510.<small>20</small></h1>
+                                <p class="small text-secondary">Last Updated: 8, March 2018</p>
+                            </div>
+                        </div>
+                    </ngx-item>
+                    <ngx-item NgxCarouselItem>
+                        <div class="card rgba-grey-slight mx-3 z-depth-0">
+                            <div class="card-body">
+                                <p class="small">CURRENT: G0orge Coorp. (4445553332)</p>
+                                <h1><span class="green-text">N </span>403,510.<small>25</small></h1>
+                                <p class="small text-secondary">Last Updated: 8, March 2018</p>
+                            </div>
+                        </div>
+                    </ngx-item>
+                    <ngx-item NgxCarouselItem>
+                        <div class="card rgba-grey-slight mx-3 z-depth-0">
+                            <div class="card-body">
+                                <p class="small">SKS: Kunle Figel Abdulsalam. (4445553332)</p>
+                                <h1><span class="green-text">N </span>7,510.<small>10</small></h1>
+                                <p class="small text-secondary">Last Updated: 8, March 2018</p>
+                            </div>
+                        </div>
+                    </ngx-item>
+                    <button NgxCarouselPrev class='leftRs'><i class="fas fa-chevron-left text-white"></i></button>
+                    <button NgxCarouselNext class='rightRs'><i class="fas fa-chevron-right text-white"></i></button>
+                </ngx-carousel>
+                <ul class="ngxcarouselPoint">
+                    <li *ngFor="let i of pointNumbers; let i = index" [class.active]="i==pointers"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.Main -->
+</header>     
+<!--Main Navigation-->

@@ -1,0 +1,173 @@
+<div class="alert-box">
+    <span class="alert alert-info error" role="alert" *ngIf="message" id="formError">{{ message }}</span>
+</div>
+<div *ngIf="!userAuthService.getUser()" class="d-flex align-items-center flex-column h-100">
+  
+  <div class="px-2 pt-3 w-100">
+    <span class="white-text">New to internet banking?</span> 
+    <img src="./assets/images/mobile-logo.png" class="img-fluid white-text float-right" alt="Responsive image">
+    <button [routerLink] = "['/onboarding/signup']" [routerLinkActive] = "['active']" type="button" class="btn btn-primary btn-sm rounded-btn text-capitalize btn-outline-light waves-light border border-white" mdbRippleRadius>Sign Up</button>
+  </div>
+  <div class="my-auto">
+    <!--Card-->
+    <div class="card mx-auto z-depth-0 bg-transparent text-white">
+        <!--Card content-->
+        <div class="card-body">
+          <form class="small-font">
+            <div class="formTitle mb-4">
+              <p class="text-primary h2 light-text mb-2">Sign in</p>
+              <span class="text-muted">Enter your details below.</span>
+            </div>
+            <div class="form-row pr-3">
+              <div class="col-12">
+                <div class="mb-2">
+                  <i class="fa fa-fw fa-envelope prefix text-primary"></i> Username/User ID/Email:
+                  <input 
+                    type="text" 
+                    id="username" 
+                    class="form-control mb-2 text-muted" 
+                    mdbActive mdbInputValidate #username>
+                  <label for="username" class="sr-only">Username/User ID/Email</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-check float-right">
+                  <input type="checkbox" class="form-check-input mt-2" id="rememberMe" placeholder="Username/User ID/Email">
+                  <label class="form-check-label pl-0" for="rememberMe"><small class="form-text">Remember me</small></label>
+                </div>
+              </div>
+            </div>
+            <div class="form-row pr-3">
+              <div class="col-12">
+                <div class="">
+                  <i class="fa fa-fw fa-lock prefix text-primary"></i> Password:
+                  <input 
+                    type="password" 
+                    id="password" 
+                    class="form-control mb-2" 
+                    mdbActive mdbInputValidate #password>
+                    
+                  <label for="password" class="sr-only">Your password</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-12">
+                <div class="md-form">
+                  <button 
+                    (click)="signin(username.value, password.value)"
+                    [routerLink] = "['/portal']"   
+                    id="customer" 
+                    class="btn btn-success btn-block waves-light mt-3" 
+                    mdbRippleRadius>Sign in</button>
+                </div>
+                <div class="form-text">
+                    <small class="form-text text-right"><a class="mr-1">Forgot User ID?</a> <a>Forgot Password?</a></small>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!--/.Card content-->
+
+    </div>
+    <!--Card-->
+  </div>
+  <div class="mt-auto p-2 text-center w-100 pb-0 white-text">
+      <span class="small">
+        <a>GTBank.com</a> |
+        <a>Terms and Conditions</a> |
+        <a>Whistle Blower</a>
+      </span>
+    </div>
+</div>
+
+<!-- The Interface that is displayed when the user is signed in. -->
+<!-- =========================================================== -->
+<div  *ngIf="userAuthService.getUser()" class="d-flex align-items-center flex-column h-100"> 
+    
+    <div class="mb-auto p-2 w-100">
+      <img src="./assets/images/mobile-logo.png" width="20%" class="img-fluid float-right pt-2" alt="Responsive image">
+      <span class="white-text small">You are Signed in.</span> 
+      <button
+        (click)="signout()"  
+        [routerLink] = "['/onboarding/signin']" 
+        [routerLinkActive] = "['active']" 
+        type="button" 
+        class="btn btn-primary btn-sm rounded-btn text-capitalize waves-effect waves-light border border-white" 
+        mdbRippleRadius>Sign Out</button>
+        
+    </div>
+    <div class="my-auto">
+        <img src="./assets/images/izikenmichael.jpg" width="50%" class="img-fluid mx-auto d-block rounded-circle z-depth-3" alt="User Image">
+        <h4 
+          class="text-center text-white pt-4 text-capitalize"
+          style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+          <strong>{{ userAuthService.getUser() }}</strong></h4>
+        <div class="col-12 mt-4 text-center waves-effect">
+            <button
+              type="button"
+              [routerLink]="['/portal']"  
+              class="btn btn-secondary float-right waves-effect waves-light"
+              mdbRippleRadius>Go to dashboard</button>
+        </div>
+    </div>
+    <div class="mt-auto pb-3 w-100">
+      <div id="quick-links" class="container-fluid py-4">
+        <div class="row d-flex justify-content-center text-center white-text">
+          <div class="col-12">
+            <div class="btn-group btn-group-lg w-100 justify-content-between z-depth-2">
+              <a class="btn btn-block btn-primary quick-links-item" href="#">
+                  <i class="fa fa-pie-chart" title="Align Left"></i>
+                  <p class="d-none d-md-block mb-0" style="font-size:0.7rem"><small>Check Balance</small></p>
+              </a>
+              <a class="btn btn-block btn-primary quick-links-item" href="#">
+                  <i class="fa fa-money" title="Align Center"></i>
+                  <p class="d-none d-md-block mb-0" style="font-size:0.7rem"><small>Transfer GTB</small></p>
+              </a>
+              <a class="btn btn-block btn-primary quick-links-item" href="#">
+                  <i class="fa fa-lightbulb-o" title="Align Right"></i>
+                  <p class="d-none d-md-block mb-0" style="font-size:0.7rem"><small>Airtime Top-Up</small></p>
+              </a>
+              <a class="btn btn-block btn-primary quick-links-item" href="#">
+                  <i class="fa fa-plus" title="Align Justify"></i>
+                  <p class="d-none d-md-block mb-0" style="font-size:0.7rem"><small>Add QUick Links</small></p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--
+      <div class="row text-center">
+        <div class="col-3 mx-auto">
+          <span class="fa-layers fa-fw waves-light" style="font-size:4rem">
+              <i class="fas fa-circle z-depth-3 rounded-circle"></i>
+              <i class="fa fas fa-money" data-fa-transform="shrink-6"></i>
+          </span>
+          <span class="text-center text-white d-block pt-2" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><p class="small">Transfer to GTB</p></span>
+        </div>
+        <div class="col-3 mx-auto">
+          <span class="fa-layers fa-fw waves-light" style="font-size:4rem">
+              <i class="fas fa-circle z-depth-3 rounded-circle"></i>
+              <i class="fa fas fa-bok" data-fa-transform="shrink-6"></i>
+          </span>
+          <span class="text-center text-white d-block pt-2" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><p class="small">View Balance</p></span>
+        </div>
+        <div class="col-3 mx-auto">
+          <span class="fa-layers fa-fw waves-light" style="font-size:4rem;">
+              <i class="fas fa-circle z-depth-3 rounded-circle"></i>
+              <i class="fa fas fa-list-ol" data-fa-transform="shrink-6"></i>
+          </span>
+          <span class="text-center text-white d-block pt-2" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><p class="small">Airtime Top-Up</p></span>
+        </div>
+        <div class="col-3 mx-auto">
+          <span class="fa-layers fa-fw waves-light" style="font-size:4rem">
+              <i class="fas fa-circle z-depth-3 rounded-circle"></i>
+              <i class="fa fas fa-plus" data-fa-transform="shrink-6"></i>
+          </span>
+          <span class="text-center text-white d-block pt-2" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><p class="small">Add Quick Links</p></span>
+        </div>
+      </div>
+    -->
+    </div>
+</div>

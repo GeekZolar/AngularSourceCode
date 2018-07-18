@@ -1,0 +1,49 @@
+$onboarding-bg: rgb(221, 79, 5);
+$signin-bg-color: rgb(66, 74, 82);
+$signin-bg-img: url("/assets/images/gray-darker.png");
+$radius50: 1.2rem;
+$light-font: 300;
+$form-text-size: 0.85rem;
+$full-height: 100%;
+
+html,
+body,
+header,
+#intro {
+    height: 100%;
+}
+
+#intro {
+    background: $signin-bg-img;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#signin-wrapper {
+    background-color: $signin-bg-color;
+    background: $signin-bg-img;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.rounded-btn {
+    border-radius: $radius50 !important;
+}
+
+.light-text {
+    font-weight: $light-font;
+}
+
+
+.carousel-inner {
+    height: $full-height;
+}
+
+.quick-links {
+    width: 60px;
+    height: 60px;
+}

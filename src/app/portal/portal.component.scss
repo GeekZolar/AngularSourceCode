@@ -1,0 +1,103 @@
+/* Your custom styles 
+
+html,
+body,
+header,
+#intro {
+    height: 100%;
+}
+
+#intro {
+    background: url("/img/business.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#loginForm {
+    position: absolute;
+    top: 35px;
+    right: -15px;
+    min-width: 320px;
+}
+
+.md-form .prefix.active {
+    color: #F9722e !important; }
+
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search-md]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+textarea.md-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #f9722e;
+    box-shadow: 0 1px 0 0 #dd4f05; 
+}
+
+input[type=text]:focus:not([readonly]) + label,
+input[type=password]:focus:not([readonly]) + label,
+input[type=email]:focus:not([readonly]) + label,
+input[type=url]:focus:not([readonly]) + label,
+input[type=time]:focus:not([readonly]) + label,
+input[type=date]:focus:not([readonly]) + label,
+input[type=datetime-local]:focus:not([readonly]) + label,
+input[type=tel]:focus:not([readonly]) + label,
+input[type=number]:focus:not([readonly]) + label,
+input[type=search-md]:focus:not([readonly]) + label,
+input[type=search]:focus:not([readonly]) + label,
+textarea.md-textarea:focus:not([readonly]) + label {
+  color: #555555; 
+}
+
+#quick-links {
+    position: relative;
+    top: -100px;
+}
+
+.quick-links-item {
+    min-width: 25%;
+}
+
+.gtcolor {
+    background-color: #dd4f05;
+}
+
+.gtcolor-light {
+    background-color: #f9722e;
+}
+
+.gtfontcolor {
+    color: #f9722e !important;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #dd4f05 !important;
+}
+*/
+/* ===== Portal Template Styles =====
+
+#floatingMenuBtn {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: 9999;
+} */  
+.navbar {
+    background-color: #dd4f05;
+}
+.top-nav-collapse {
+    background-color: #4285F4;
+}
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #4285F4;
+    }
+}
+        

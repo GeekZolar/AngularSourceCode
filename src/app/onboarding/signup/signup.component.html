@@ -1,0 +1,83 @@
+<div class="alert-box">
+    <span class="alert alert-info error" role="alert" *ngIf="message" id="formError">{{ message }}</span>
+</div>
+<div class="d-flex align-items-center flex-column h-100"> 
+  <div class="px-2 pt-3 w-100">
+    <span class="white-text">Already Registered?</span> 
+    <img src="./assets/images/mobile-logo.png" class="img-fluid white-text float-right" alt="Responsive image">
+    <button [routerLink]="['/onboarding/signin']" [routerLinkActive] = "['active']" type="button" class="btn btn-primary btn-sm rounded-btn text-capitalize btn-outline-light waves-light border border-white" mdbRippleRadius>Sign In</button>
+  </div>
+  <div class="my-auto">
+    <!--Card-->
+    <div class="card mx-auto z-depth-0 bg-transparent text-white">
+        <!--Card content-->
+        <div class="card-body">
+          <form class="small-font">
+            <div class="formTitle mb-4">
+              <p class="text-primary h2 light-text mb-2">Sign Up</p>
+              <span class="text-muted">To register, please enter your details below.</span>
+            </div>
+            <div class="form-row pr-3">
+              <div class="col-12">
+                <div class="mb-2">
+                  <i class="fa fa-fw fa-user prefix text-primary"></i><label class="ml-2 mt-2" for="signin-email">Account Number:</label>
+                  <input 
+                    type="text" 
+                    id="acctNo" 
+                    class="form-control mb-1 py-0 text-muted" 
+                    mdbActive mdbInputValidate>
+                  <small class="form-text text-muted"><a>Any of your GTB bank account.</a></small>
+                </div>
+              </div>
+            </div>
+            <div class="form-row pr-3">
+              <div class="col-12">
+                <div class="mb-2">
+                  <i class="fa fa-fw fa-envelope prefix text-primary"></i>
+                  <label class="ml-2 mt-2" for="email">Username:</label>
+                  <input 
+                    type="text" 
+                    id="email" 
+                    class="form-control py-0 mb-1" 
+                    mdbActive mdbInputValidate>
+                  
+                  <small class="form-text text-muted"><a>Your email or a custom username.</a></small>
+                </div>
+              </div>
+            </div>
+            <div class="form-row pr-3">
+              <div class="col-12">
+                <div class="">
+                  <i class="fa fa-fw fa-lock prefix text-primary"></i>
+                  <label class="ml-2 mt-2" for="signup-pass">Your password:</label>
+                  <input 
+                    type="password" 
+                    id="signup-pass" 
+                    class="form-control mb-1 py-0" 
+                    mdbActive mdbInputValidate>
+                    <small class="form-text text-muted"><a>Minimum of six(6) characters.</a></small>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-12 mt-3">
+                <div class="md-form mb-0">
+                  <button [routerLink]="['/portal']" id="customer" class="btn btn-success btn-block waves-light mb-1" mdbRippleRadius>Submit</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!--/.Card content-->
+
+    </div>
+    <!--Card-->
+  </div>
+  <div class="mt-auto p-2 text-center w-100 pb-0 white-text">
+      <span class="small">
+        <a>GTBank.com</a> |
+        <a>Terms and Conditions</a> |
+        <a>Whistle Blower</a>
+      </span>
+    </div>
+</div>
